@@ -3,10 +3,18 @@ export default function CurrencyRow({
   currencyOptions,
   selectedCurrency,
   changeCurrency,
+  amount,
+  handleAmountChange,
 }) {
+  console.log(amount);
   return (
     <div>
-      <input type="number" className="currency__input" />
+      <input
+        type="number"
+        className="currency__input"
+        value={amount}
+        onChange={handleAmountChange}
+      />
       <select value={selectedCurrency} onChange={changeCurrency}>
         {/* populate options with currencyOptions from props */}
         {currencyOptions.map((option) => (
